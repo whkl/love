@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="jquery-1.4.2.js"></script>
+    <style>
+    body{padding:0;margin:0;position: relative; text-align: center;}
+    p{padding:0;margin:0;position: absolute;color:red;}
+    #dabendan{position: absolute;left:600px;top:350px; display: none;}
+    </style>
+    <title></title>
+</head>
+<body>
+    <script>
+        var i=0;
+        var t=null;
+        function love() {
+            i++;
+            if(i<=13) {
+                $("body").append("<p class=love" + i + ">❤</p>");
+                $(".love" + i).css({"left": 650 - i * 10, "top": 300 - i * 10});
+            }else if(i>13&&i<=21){
+                $("body").append("<p class=love" + i + ">❤</p>");
+                var left=$(".love"+(i-1)).offset().left;
+                var top=$(".love"+(i-1)).position().top;
+                $(".love" + i).css({"left":left-10, "top":top});
+            }else if(i>21&&i<=27){
+                $("body").append("<p class=love" + i + ">❤</p>");
+                var left=$(".love"+(i-1)).offset().left;
+                var top=$(".love"+(i-1)).position().top;
+                $(".love" + i).css({"left":left-10, "top":top+10});
+            }else if(i>27&&i<=54){
+                $("body").append("<p class=love" + i + ">❤</p>");
+                var left=$(".love"+(i-1)).offset().left
+                var top=$(".love"+(i-1)).offset().top;
+                $(".love" + i).css({"left":left+10, "top":top+10});
+            }else if(i>54&&i<=81){
+                $("body").append("<p class=love" + i + ">❤</p>");
+                var left=$(".love"+(i-1)).offset().left;
+                var top=$(".love"+(i-1)).offset().top;
+                $(".love" + i).css({"left":left+10, "top":top-10});
+            }else if(i>81&&i<=87){
+                $("body").append("<p class=love" + i + ">❤</p>");
+                var left=$(".love"+(i-1)).offset().left;
+                var top=$(".love"+(i-1)).offset().top;
+                $(".love" + i).css({"left":left-10, "top":top-10});
+            }else if(i>87&&i<=95){
+                $("body").append("<p class=love" + i + ">❤</p>");
+                var left=$(".love"+(i-1)).offset().left;
+                var top=$(".love"+(i-1)).position().top;
+                $(".love" + i).css({"left":left-10, "top":top});
+            }
+            else if(i>95&&i<=108){
+                $("body").append("<p class=love" + i + ">❤</p>");
+                var left=$(".love"+(i-1)).offset().left;
+                var top=$(".love"+(i-1)).offset().top;
+                $(".love" + i).css({"left":left-10, "top":top+10});
+            }else{
+                    $("body").append("<div id='dabendan'>大笨蛋，我喜欢你</div>");
+                    $("#dabendan").fadeIn("slow");
+                    clearInterval(t);
+            }
+        }
+         t=setInterval(love,50);
+    </script>
+</body>
+</html>
